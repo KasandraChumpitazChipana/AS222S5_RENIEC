@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class ReniecService {
 
-	private static final String RENIEC_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Imp1bGlvLnF1aXNwZUB2YWxsZWdyYW5kZS5lZHUucGUifQ.6M-P2QMMvKFZEeMvTUXvkOooM02N_pWqt0OdlaYW3PM";
+	private static final String RENIEC_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImNyaXN0aG9wZXJzb2NhbGF5cmFtaXJlekBnbWFpbC5jb20ifQ.147XdN_92pJCPRaPZ5PzUBvlX4mkrjIl-FqR57g71KE";
 	private static final String RENIEC_ENDPOINT = "https://dniruc.apisperu.com/api/v1/dni/";
 
 	private final WebClient webClient;
