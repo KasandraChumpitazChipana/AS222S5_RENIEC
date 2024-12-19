@@ -1,0 +1,69 @@
+<div class="dashboard-container">
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <button class="sidebar-toggle" (click)="toggleSidebar()">
+        <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF" class="hamburguesa-icon">
+      </button>
+      <a class="brand-logo" (click)="navigate('/')">
+        <span>Bodega</span>
+      </a>
+    </div>
+
+    <form class="search-form">
+      <div class="search-input-group">
+        <input
+          type="text"
+          placeholder="Buscar..."
+          [formControl]="searchControl"
+          class="search-input">
+        <button type="button" class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+
+    <div class="user-menu">
+      <div class="dropdown" [ngClass]="{'show': isUserMenuOpen}">
+        <button type="button" class="user-button" (click)="toggleUserMenu($event)">
+          <img src="https://img.icons8.com/?size=100&id=83190&format=png&color=FFFFFF" alt="User Icon" class="user-icon">
+        </button>        
+        <div class="dropdown-menu" [ngClass]="{'show': isUserMenuOpen}">
+          <a (click)="navigate('/settings')" class="dropdown-item">
+            <i class="fas fa-cog"></i> Configuración
+          </a>
+          <a (click)="navigate('/activity')" class="dropdown-item">
+            <i class="fas fa-history"></i> Registro de Actividad
+          </a>
+          <div class="dropdown-divider"></div>
+          <a (click)="logout()" class="dropdown-item">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="main-content" [ngClass]="{'sidebar-expanded': !isSidebarCollapsed}">
+    <!-- Sidebar -->
+    <nav class="sidebar" [ngClass]="{'collapsed': isSidebarCollapsed}">
+      <div class="sidebar-content">
+
+        <!-- Remuneraciones Section -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-heading">Tablas</h3>
+          <a (click)="navigate('/empleados')" routerLinkActive="active" class="sidebar-link">
+            <img src="https://img.icons8.com/?size=100&id=9542&format=png&color=FFFFFF" alt="Empleados Icon" class="empleados-icon">
+            <span>Empleados</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
